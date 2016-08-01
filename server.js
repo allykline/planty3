@@ -15,7 +15,25 @@ app.use(methodOverride());
 app.use(express.static(__dirname + '/public')); //sending all files to the front
 
 //watson
+var watson = require('watson-developer-cloud');
+var fs = require('fs');
 
+var visual_recognition = watson.visual_recognition({
+	api_key: process.env.API_KEY,
+	version: 'v3',
+	version_date: '2016-05-19'
+});
+
+var params = {
+	images_file: fs.createReadStream('./public/images/lily.jpg')
+};
+
+visual_recognition.classify(params, function(err, res) {
+	if (err)
+		console.log(err);
+	else 
+		console.log(JSON.stringify(res, null, 2));
+});
 
 
 //routes
