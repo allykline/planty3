@@ -1,0 +1,26 @@
+{
+  "name": "planty3",
+  "version": "1.0.0",
+  "description": "planty, third time's a charm!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allykline/planty3.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allykline/planty3/issues"
+  },
+  "homepage": "https://github.com/allykline/planty3#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6",
+    "watson-developer-cloud": "^2.0.0"
+  }
+}
