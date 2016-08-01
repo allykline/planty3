@@ -1,0 +1,47 @@
+body {
+	background-color: #92AD94;
+}
+
+.title {
+	text-align: center;
+	color: #E2EFDE;
+	font-family: Exo;
+	font-size: 70px
+		
+}
+
+.nav nav-tabs {
+	display: inline-block;
+	float:none;
+	position: relative;
+}
+
+.nav-tabs > li {
+	float:none;
+	display: inline-block;
+	zoom: 1;
+}
+
+.nav-tabs {
+	text-align: center;
+	background-color: #A5D0A8;
+}
+
+.nav-tabs a{
+	color: #E2EFDE;
+	font-size: 20px;
+	font-family: Exo
+
+}
+
+.nav-tabs:hover a{
+	background-color: white;
+}
+
+.jumbotron {
+	position: relative;
+	width: 500%;
+	background-image: url(images/trees.jpg);
+	height:500%;
+	background-size: auto 100%;
+}
