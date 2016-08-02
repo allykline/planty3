@@ -1,0 +1,68 @@
+body {
+	background-color: #92AD94;
+}
+
+.title {
+	text-align: center;
+	color: #E2EFDE;
+	font-family: Exo;
+	font-size: 70px
+		
+}
+
+.nav nav-tabs {
+	display: inline-block;
+	float:none;
+	position: relative;
+}
+
+.nav-tabs > li {
+	float:none;
+	display: inline-block;
+	zoom: 1;
+}
+
+.nav-tabs {
+	text-align: center;
+	background-color: #A5D0A8;
+}
+
+.nav-tabs a{
+	color: #E2EFDE;
+	font-size: 20px;
+	font-family: Exo;
+
+}
+
+h2 {
+	font-family: Exo;
+	font-size: 40px;
+	text-align: center;
+	color: #E2EFDE;
+}
+
+.steps {
+	text-align: center;
+	font-family: Poppins;
+	color: #E2EFDE;
+	font-size: 20px;
+
+}
+
+.aboutus {
+	text-align: center;
+	font-family: Poppins;
+	color: #E2EFDE;
+	font-size: 20px;
+}
+
+.pic {
+	display: block;
+	margin: 0 auto;
+	width: 350px;
+	height:200px;
+}
+
+/*.nav-tabs > li > a{
+	background-color: black !important;
+}*/

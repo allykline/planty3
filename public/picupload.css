@@ -1,4 +1,3 @@
-
 body {
 	background-color: #92AD94;
 }
@@ -35,12 +34,12 @@ body {
 
 }
 
+#bannerImg {
+	display:block;
+	margin: 0 auto;
+}
 
-.jumbotron {
-	position: relative;
-	width: 1150px;
-	background-image: url(images/trees.jpg);
-	height:300px;
-	background-repeat: none;
-	background-size: auto 100%;
-
+#tableBanner {
+	display: block;
+	margin: 0 auto;
+}
