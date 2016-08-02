@@ -43,8 +43,12 @@ app.use(express.static(__dirname + '/public')); //sending all files to the front
 // console.log the data
 //send back a different piece of data (create another object literal and jsonify it)
 app.post('/endpoint', function(req, res){
-	var obj = {};
-	console.log('body: ' + JSON.stringify(req.body));
+	console.log(req.body)
+
+	// console.log('body: ' + JSON.stringify(req.body));
+
+	//call watson logic
+
 	res.send(req.body);
 });
 

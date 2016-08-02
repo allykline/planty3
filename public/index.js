@@ -1,19 +1,28 @@
 //document.ready
 $(document).ready(function() {
-	var data = {};
-	data.title = "flower.png";
-	data.message = "hello flower";
-	
-	$.ajax({
-		type: 'POST',
-		data: JSON.stringify(data),
-        contentType: 'application/json',
-        url: 'http://localhost:8080/endpoint',						
-        success: function(data) {
-            console.log('success');
-            console.log(JSON.stringify(data));
-        }
-    });
+    
+	$("button").click(function(){
+		var data = {}
+		data.image = $(this).val();
+		console.log(data)
+
+		$.ajax({
+			type: 'POST',
+			data: JSON.stringify(data),
+	        contentType: 'application/json',
+	        url: 'http://localhost:8080/endpoint',						
+	        success: function(data) {
+	            console.log('success');
+	            console.log(JSON.stringify(data));
+	        }
+	    });
+
+	})
+
+
+
+
+
 
 })
 
