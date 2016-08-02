@@ -13,8 +13,8 @@ $(document).ready(function() {
 	        url: 'http://localhost:8080/endpoint',						
 	        success: function(data) {
 	            console.log('success');
-	            console.log(JSON.parse(data));
-	            debugger;
+	            var parse = (JSON.parse(data));
+	            console.log(parse.images[0].classifiers[0].classes);	
 	        }
 	    });
 
