@@ -14,9 +14,15 @@ $(document).ready(function() {
 	        success: function(data) {
 	            console.log('success');
 	            var parse = (JSON.parse(data));
-	            console.log(parse.images[0].classifiers[0].classes);	
+	            var morgan = (parse.images[0].classifiers[0].classes);	
+	            console.log(morgan)
+				$("#watson").append(JSON.stringify(morgan));	
+
+
 	        }
+	   
 	    });
+
 
 	})
 
