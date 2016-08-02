@@ -13,7 +13,7 @@ $(document).ready(function() {
 	        url: 'http://localhost:8080/endpoint',						
 	        success: function(data) {
 	            console.log('success');
-	            console.log(JSON.stringify(data));
+	            console.log(JSON.parse(data));
 	        }
 	    });
 
