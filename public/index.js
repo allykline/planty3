@@ -14,6 +14,7 @@ $(document).ready(function() {
 	        success: function(data) {
 	            console.log('success');
 	            console.log(JSON.parse(data));
+	            debugger;
 	        }
 	    });
 
