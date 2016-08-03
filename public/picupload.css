@@ -94,16 +94,27 @@ a:hover {
 
 }
 
-
-/*#bannerImg {
-	display:block;
-	margin: 0 auto;
+.btn {
+	background-color: #7c8a78;
 }
 
-#tableBanner {
-	display: block;
-	margin: 0 auto;
-}*/
+#watson {
+	display: none;
+	font-family: 'Poppins', sans-serif;
+	color: #E2EFDE;
+	background-color: #7c8a78;
+	margin-left: 5px;
+}
+
+#wat {
+	font-family: 'Poppins', sans-serif;
+	color: #E2EFDE;
+}
+
+#giffy {
+
+}
+
 
 #upload-image {
 	display:block;
