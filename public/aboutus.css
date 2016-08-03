@@ -14,10 +14,12 @@ img{
 	width: 250px !important;
 	height:auto;
 }
+
 .navmain {
 	position: fixed;
 	top: 0;
 }
+
 .navbar {
 	display: inline-block;
 	float: center;
@@ -78,11 +80,11 @@ a:hover {
 	background-size: 100px;
 }
 
-.myface img{
+.myface {
 	float: left;
 	margin: 0 10px 10px 0;
-	width: 25px;
-	height: 25px;
+	height: 155px;
+	max-width: 170px;
 }
 
 
@@ -90,5 +92,26 @@ a:hover {
 
 .clearfix{
 	overflow: auto;
+}
+
+.face1 {
+	float: left;
+	margin: 0 10px 10px 0;
+	height: 160px;
+	max-width: 170px;
+}
+
+.face2 {
+	float: left;
+	margin: 0 10px 10px 0;
+	height: 200px;
+	max-width: 170px;
+}
+
+.face3 {
+	float: left;
+	margin: 0 10px 10px 0;
+	height: 183px;
+	max-width: 170px;
 }
 

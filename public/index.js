@@ -1,6 +1,7 @@
 //document.ready
 $(document).ready(function() {
     
+<<<<<<< HEAD
 	$("button").click(function(){
 		var data = {}
 		data.image = $(this).val();
@@ -32,6 +33,8 @@ $(document).ready(function() {
 
 
 
+=======
+>>>>>>> 5880b1972342f15a72f2e94318d894b414b4e7e9
 
 
 
