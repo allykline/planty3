@@ -12,7 +12,7 @@ $(document).ready(function() {
             url: 'http://localhost:8080/endpoint',                      
             success: function(data) {
                 console.log('success');
-                var parse = (JSON.parse(data));
+                var parse = JSON.parse(data);
                 var morgan = (parse.images[0].classifiers[0].classes);  
                 console.log(morgan);
                 for (var i = 0; i < morgan.length; i++) {
@@ -33,7 +33,7 @@ $(document).ready(function() {
                 //      if it exists, get the value and save to a variable
                 //  use the two variables to append in whatever format you want       
                 }
-            )}
+            })
         })
 
 
@@ -55,7 +55,7 @@ $(document).ready(function() {
                 console.log('success');
                 var parse = (JSON.parse(data));
                 var morgan = (parse.images[0].classifiers[0].classes);  
-                $("#watson").append(JSON.stringify(morgan));   
+                $("#watson-upload").append(JSON.stringify(morgan));   
                 //to iterate through morgan through all the objects
                 //  get the value from the key class of the object that you are currently on and save it to a variable
                 //  check if type_hierarchy exists (you will have to look up how to check if a key in an object literal exists)
@@ -81,8 +81,7 @@ $(document).ready(function() {
           type: 'POST',
           success: function(data){
            console.log(data);
-           var parsedData = JSON.parse(data)
-           var img_str = '<img value=' + parsedData + ' src="images/' + parsedData + '">'
+           var img_str = '<img value=' + data + ' src="images/' + data + '">'
            console.log(img_str)
            $("#uploaded-image").append(img_str);
 
