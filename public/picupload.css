@@ -116,16 +116,7 @@ a:hover {
 }
 
 
-#bannerImg {
+#upload-image {
 	display:block;
 	margin: 0 auto;
-}
-
-#tableBanner {
-	display: block;
-	margin: 0 auto;
-}
-
-#space {
-	height: 100px;
 }

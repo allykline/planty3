@@ -8,6 +8,7 @@
 	<script src="picupload.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Exo+2:100' rel='stylesheet' type='text/css'>
 
+
 </head>
 <body>
 <!-- Old Header -->
@@ -28,9 +29,10 @@
 			<a href="picupload.html">Upload</a>
 		</li>
 		<li>
-			<a href="learnmore.html">Learn More</a>
+			<a href="aboutus.html">Learn More</a>
 		</li>
 	</ul>
+
 	<center>
 		<div class="line-separator"></div>
 	</center>
@@ -42,11 +44,15 @@
 		<p class= "steps"> 2. Submit picture. </p>
 		<p class= "steps"> 3. Wait for the results. </p>
 		<p class= "steps"> 4. Walk away with the amazing knowledge that you've gained. </p>
-		<input type="file" id="bannerImg"  />
-		<!-- <img src="" id="tableBanner" /> -->
-		<div id="res"></div>
+		<form id="upload">
+			<input type="file" name="image" id="image">
+			<input type="submit" value="Upload Image">
+		</form>
+		<div id="uploaded-image"></div>
+		<div id="watson"></div>
 	<h2> Don't have a picture? </h2>
 		<p class="steps">Don't worry! Use one of our sample pictures below to test out the program.</p>
+
 	<center>
 	<button id="btn1" class="btn" value="bamboo.jpg"><img src="images/bamboo-preview.jpg"></button>
 	<button id="btn2" class="btn" value="lily.jpg"><img src="images/lily-preview.jpg"></button>

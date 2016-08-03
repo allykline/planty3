@@ -1,49 +1,10 @@
 $(document).ready(function() {
 
-    // var bannerImage = document.getElementById('bannerImg');
-    // var result = document.getElementById('res');
-    // var img = document.getElementById('tableBanner');
-
-    // bannerImage.addEventListener('change', function() {
-    //     var file = this.files[0];
-    //     if (file.type.indexOf('image') < 0) {
-    //         res.innerHTML = 'invalid type';
-    //         return;
-    //     }
-    //     var fReader = new FileReader();
-    //     fReader.onload = function() {
-    //         img.src = fReader.result;
-    //         localStorage.setItem("imgData", getBase64Image(img));
-    //     };
-        
-    //     fReader.readAsDataURL(file);
-    // });
-
-    // function getBase64Image(img) {
-    //     var canvas = document.createElement("canvas");
-    //     canvas.width = img.width;
-    //     canvas.height = img.height;
-        
-    //     var ctx = canvas.getContext("2d");
-    //     ctx.drawImage(img, 0, 0);
-        
-    //     var dataURL = canvas.toDataURL("image/png");
-        
-    //     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-    // }
-
-    // function fetchimage () {
-    //     var dataImage = localStorage.getItem('imgData');
-    //     img.src = "data:image/png;base64," + dataImage;
-    // }
-
-    // Call fetch to get image from localStorage.
-    // fetchimage();
     $("button").click(function(){
         var data = {}
         data.image = $(this).val();
         console.log(data)
-    $("#watson").show();
+        $("#watson").show();
         $.ajax({
             type: 'POST',
             data: JSON.stringify(data),
@@ -70,10 +31,65 @@ $(document).ready(function() {
                 //  get the value from the key class of the object that you are currently on and save it to a variable
                 //  check if type_hierarchy exists (you will have to look up how to check if a key in an object literal exists)
                 //      if it exists, get the value and save to a variable
+                //  use the two variables to append in whatever format you want       
+                }
+            )}
+        })
+
+
+
+
+
+
+    $("#uploaded-image").on("click", function(){
+        var data = {}
+        var img = $(this)[0].lastChild
+        data.image = $(img).attr("value")
+
+        $.ajax({
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            url: 'http://localhost:8080/endpoint',                      
+            success: function(data) {
+                console.log('success');
+                var parse = (JSON.parse(data));
+                var morgan = (parse.images[0].classifiers[0].classes);  
+                $("#watson").append(JSON.stringify(morgan));   
+                //to iterate through morgan through all the objects
+                //  get the value from the key class of the object that you are currently on and save it to a variable
+                //  check if type_hierarchy exists (you will have to look up how to check if a key in an object literal exists)
+                //      if it exists, get the value and save to a variable
                 //  use the two variables to append in whatever format you want
-                   
+                 
             }
-       
+        });
+    })
+
+    $("#upload").submit(function(event){
+        event.preventDefault();
+        var fd = new FormData();    
+        fd.append( 'image', $('#image')[0].files[0] );
+
+
+        $.ajax({
+          url: 'http://localhost:8080/upload',
+          data: fd,
+          processData: false,
+          contentType: false,
+          enctype: 'multipart/form-data',
+          type: 'POST',
+          success: function(data){
+           console.log(data);
+           var parsedData = JSON.parse(data)
+           var img_str = '<img value=' + parsedData + ' src="images/' + parsedData + '">'
+           console.log(img_str)
+           $("#uploaded-image").append(img_str);
+
+            //data is the file name
+            //img src images/file_name
+            //append this image to the front page with the class of button
+          }
         });
     })
 
