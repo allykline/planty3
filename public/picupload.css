@@ -95,12 +95,17 @@ a:hover {
 }
 
 
-#bannerImg {
+/*#bannerImg {
 	display:block;
 	margin: 0 auto;
 }
 
 #tableBanner {
 	display: block;
+	margin: 0 auto;
+}*/
+
+#upload-image {
+	display:block;
 	margin: 0 auto;
 }

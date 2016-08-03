@@ -85,3 +85,14 @@ a:hover {
 	border-spacing: 3px;
 }
 
+.text {
+	font-family: Poppins; 
+	font-size: 20px;
+	color: #E2EFDE;
+}
+
+.sectiontitle {
+	font-family: Poppins;
+	font-size: 25px;
+	color: #E2EFDE;
+}

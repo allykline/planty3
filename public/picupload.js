@@ -1,44 +1,51 @@
 $(document).ready(function() {
 
-    var bannerImage = document.getElementById('bannerImg');
-    var result = document.getElementById('res');
-    var img = document.getElementById('tableBanner');
+    $("#uploaded-image").on("click", function(){
+        var data = {}
+        var img = $(this)[0].lastChild
+        data.image = $(img).attr("value")
 
-    bannerImage.addEventListener('change', function() {
-        var file = this.files[0];
-        if (file.type.indexOf('image') < 0) {
-            res.innerHTML = 'invalid type';
-            return;
-        }
-        var fReader = new FileReader();
-        fReader.onload = function() {
-            img.src = fReader.result;
-            localStorage.setItem("imgData", getBase64Image(img));
-        };
-        
-        fReader.readAsDataURL(file);
-    });
+        $.ajax({
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            url: 'http://localhost:8080/endpoint',                      
+            success: function(data) {
+                console.log('success');
+                var parse = (JSON.parse(data));
+                var morgan = (parse.images[0].classifiers[0].classes);  
+                console.log(morgan)
+                $("#watson").append(JSON.stringify(morgan));    
+            }
+        });
+    })
 
-    function getBase64Image(img) {
-        var canvas = document.createElement("canvas");
-        canvas.width = img.width;
-        canvas.height = img.height;
-        
-        var ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0);
-        
-        var dataURL = canvas.toDataURL("image/png");
-        
-        return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-    }
+    $("#upload").submit(function(event){
+        event.preventDefault();
+        var fd = new FormData();    
+        fd.append( 'image', $('#image')[0].files[0] );
 
-    function fetchimage () {
-        var dataImage = localStorage.getItem('imgData');
-        img.src = "data:image/png;base64," + dataImage;
-    }
 
-    // Call fetch to get image from localStorage.
-    fetchimage();
+        $.ajax({
+          url: 'http://localhost:8080/upload',
+          data: fd,
+          processData: false,
+          contentType: false,
+          enctype: 'multipart/form-data',
+          type: 'POST',
+          success: function(data){
+           console.log(data);
+           var parsedData = JSON.parse(data)
+           var img_str = '<img value=' + parsedData + ' src="images/' + parsedData + '">'
+           console.log(img_str)
+           $("#uploaded-image").append(img_str);
+
+            //data is the file name
+            //img src images/file_name
+            //append this image to the front page with the class of button
+          }
+        });
+    })
 
 })
 
