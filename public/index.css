@@ -2,7 +2,7 @@
 body {
 	background-color: #92AD94;
 }
-
+/*
 .title {
 	text-align: center;
 	color: #E2EFDE;
@@ -35,12 +35,53 @@ body {
 
 }
 
-
 .jumbotron {
 	position: relative;
 	width: 1150px;
 	background-image: url(images/trees.jpg);
 	height:300px;
 	background-repeat: none;
-	background-size: auto 100%;
+	background-size: auto 100%;*/
+
+img{
+	float:left;
+	width: 250px !important;
+	height:auto;
+}
+
+.navbar {
+	display: inline-block;
+	top: 0;	
+	float: center;
+	position: fixed;
+	list-style-type: none;
+	padding-top: 40px;
+	padding-left: 50px;
+	background color: white;
+}
+
+.navbar a{
+	font-family: 'Poppins', sans-serif;
+	font-size: 18px;
+	color: #e2efde;
+	text-decoration: none;
+}
+
+.navbar li{
+	display: inline;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+a:hover {
+	color: #bed5b7;
+}
+	
+.line-separator{
+	padding-top: 80px;	
+	height:30px;
+	/*background:#717171;*/
+	border-bottom:2px solid #e2efde;
+	border-spacing: 3px;
+}
 
