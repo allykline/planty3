@@ -5,6 +5,7 @@
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+	<script src="index.js"></script>
 	<!--  -->
 	<link rel="stylesheet" href="index.css" >
 	<link href='https://fonts.googleapis.com/css?family=Exo+2:100' rel='stylesheet' type='text/css'>
@@ -39,8 +40,8 @@
 	  <h1></h1>
 	 
 	</div>
-	<form action="/upload" method="POST" enctype="multipart/form-data">
-		<input type="file" name="image">
+	<form id="upload">
+		<input type="file" name="image" id="image">
 		<input type="submit" value="Upload Image">
 	</form>
 </body>
