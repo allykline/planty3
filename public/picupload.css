@@ -2,7 +2,9 @@ body {
 	background-color: #92AD94;
 }
 
-.title {
+/*Old Header*/
+
+/*.title {
 	text-align: center;
 	color: #E2EFDE;
 	font-family: Exo;
@@ -32,7 +34,66 @@ body {
 	font-size: 20px;
 	font-family: Exo
 
+}*/
+
+img{
+	float:left;
+	width: 250px !important;
+	height:auto;
 }
+
+.navbar {
+	display: inline-block;
+	top: 0;	
+	float: center;
+	position: fixed;
+	list-style-type: none;
+	padding-top: 40px;
+	padding-left: 50px;
+	background color: white;
+}
+
+.navbar a{
+	font-family: 'Poppins', sans-serif;
+	font-size: 18px;
+	color: #e2efde;
+	text-decoration: none;
+}
+
+.navbar li{
+	display: inline;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+a:hover {
+	color: #bed5b7;
+}
+	
+.line-separator{
+	padding-top: 80px;	
+	height:30px;
+	/*background:#717171;*/
+	border-bottom:2px solid #e2efde;
+	border-spacing: 3px;
+}
+
+.pgtitle{
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+	color: #e2efde;
+	font-weight: bold;
+	font-size: 35px;
+}
+
+.steps {
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+	color: #E2EFDE;
+	font-size: 20px;
+
+}
+
 
 #bannerImg {
 	display:block;

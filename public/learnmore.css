@@ -2,52 +2,55 @@ body {
 	background-color: #92AD94;
 }
 
-.title {
-	text-align: center;
-	color: #E2EFDE;
-	font-family: Exo;
-	font-size: 70px
-		
-}
-
-.nav nav-tabs {
-	display: inline-block;
-	float:none;
-	position: relative;
-}
-
-.nav-tabs > li {
-	float:none;
-	display: inline-block;
-	zoom: 1;
-}
-
-.nav-tabs {
-	text-align: center;
-	background-color: #A5D0A8;
-}
-
-.nav-tabs a{
-	color: #E2EFDE;
-	font-size: 20px;
-	font-family: Exo;
-
-}
-
 h2 {
-	font-family: Exo;
+	font-family: 'Poppins', sans-serif;
 	font-size: 40px;
 	text-align: center;
 	color: #E2EFDE;
 }
 
-.steps {
-	text-align: center;
-	font-family: Poppins;
-	color: #E2EFDE;
-	font-size: 20px;
-
+img{
+	float:left;
+	width: 250px !important;
+	height:auto;
 }
+.navmain {
+	position: fixed;
+	top: 0;
+}
+.navbar {
+	display: inline-block;
+	float: center;
+	list-style-type: none;
+	padding-top: 45px;
+	padding-left: 50px;
+	background color: white;
+}
+
+.navbar a{
+	font-family: 'Poppins', sans-serif;
+	font-size: 18px;
+	color: #e2efde;
+	text-decoration: none;
+}
+
+.navbar li{
+	display: inline;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+a:hover {
+	color: #bed5b7;
+}
+	
+.line-separator{
+	height:1px;
+	/*background:#717171;*/
+	border-bottom:2px solid #e2efde;
+	border-spacing: 3px;
+}
+
 
 .aboutus {
 	text-align: center;
@@ -63,6 +66,28 @@ h2 {
 	height:200px;
 }
 
-/*.nav-tabs > li > a{
-	background-color: black !important;
-}*/
+.team {
+	text-align: left;
+}
+
+.me {
+	font-family: 'Poppins', sans-serif;
+	color: #E2EFDE;
+	background-color: #7c8a78;
+	padding: 5px 15px 40px;
+	background-size: 100px;
+}
+
+.myface img{
+	float: left;
+	margin: 0 10px 10px 0;
+	width: 50px;
+}
+
+
+
+
+.clearfix{
+	overflow: auto;
+}
+
