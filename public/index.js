@@ -20,6 +20,11 @@ $(document).ready(function() {
 
 	})
 
+	$("#upload-image").submit(function(){
+
+		$.ajax()
+	})
+
 
 
 

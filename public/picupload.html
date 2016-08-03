@@ -18,9 +18,16 @@
 	  <li role="presentation"><a href="picupload.html">Upload a Pic!</a></li>
 	  <li role="presentation"><a href="learnmore.html">Learn More</a></li>
 	</ul>
-	<input type="file" id="bannerImg"  />
+<!-- 	<input type="file" id="bannerImg"  />
 	<img src="" id="tableBanner" />
-	<div id="res"></div>
+	<div id="res"></div> -->
+	
+	<form id="upload-image" action="/upload" method="POST" enctype="multipart/form-data">
+		<input type="file" name="image">
+		<input type="submit" value="Upload Image">
+	</form>
+	
+	
 </body>
 
 </html>
