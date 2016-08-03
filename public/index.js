@@ -13,10 +13,16 @@ $(document).ready(function() {
 	        url: 'http://localhost:8080/endpoint',						
 	        success: function(data) {
 	            console.log('success');
-	            console.log(JSON.parse(data));
-	            debugger;
+	            var parse = (JSON.parse(data));
+	            var morgan = (parse.images[0].classifiers[0].classes);	
+	            console.log(morgan)
+				$("#watson").append(JSON.stringify(morgan));	
+
+
 	        }
+	   
 	    });
+
 
 	})
 
