@@ -43,7 +43,7 @@ $(document).ready(function() {
         var data = {}
         data.image = $(this).val();
         console.log(data)
-
+    $("#watson").show();
         $.ajax({
             type: 'POST',
             data: JSON.stringify(data),
@@ -63,7 +63,8 @@ $(document).ready(function() {
                         type = current.type_hierarchy;
                     }
                     //.show to show the watson div
-                    $("#watson").append("<div>" + clas + ": " + type + "</div>"); 
+                    $("#giffy").hide();
+                    $("#watson").append("<div>" + "<b>" + clas  + "</b>" + ": " + type + "</div>"); 
                 }
                 //to iterate through morgan through all the objects
                 //  get the value from the key class of the object that you are currently on and save it to a variable
