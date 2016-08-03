@@ -1,40 +1,5 @@
 //document.ready
 $(document).ready(function() {
-    
-<<<<<<< HEAD
-	$("button").click(function(){
-		var data = {}
-		data.image = $(this).val();
-		console.log(data)
-
-		$.ajax({
-			type: 'POST',
-			data: JSON.stringify(data),
-	        contentType: 'application/json',
-	        url: 'http://localhost:8080/endpoint',						
-	        success: function(data) {
-	            console.log('success');
-	            var parse = (JSON.parse(data));
-	            var morgan = (parse.images[0].classifiers[0].classes);	
-	            console.log(morgan)
-				$("#watson").append(JSON.stringify(morgan));	
-
-
-	        }
-	   
-	    });
-
-
-	})
-
-	
-
-
-
-
-
-=======
->>>>>>> 5880b1972342f15a72f2e94318d894b414b4e7e9
 
 
 
