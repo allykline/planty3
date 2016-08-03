@@ -52,6 +52,10 @@ img{
 	padding-left: 50px;
 	background color: white;
 }
+.header {
+	position: fixed;
+	top: 0;
+}
 
 .navbar a{
 	font-family: 'Poppins', sans-serif;
@@ -91,7 +95,6 @@ a:hover {
 	font-family: 'Poppins', sans-serif;
 	color: #E2EFDE;
 	font-size: 20px;
-
 }
 
 
@@ -103,4 +106,14 @@ a:hover {
 #tableBanner {
 	display: block;
 	margin: 0 auto;
+}
+
+.btn {
+	background-color: #7c8a78;
+}
+
+#watson {
+	font-family: 'Poppins', sans-serif;
+	color: #E2EFDE;
+	background-color: #7c8a78;
 }
