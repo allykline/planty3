@@ -1,12 +1,13 @@
 $(document).ready(function() {
 
+    //for test images
     $("button").click(function(){
         var data = {}
         data.image = $(this).val();
         console.log(data)
         $("#watson").show();
 
-        
+
         $.ajax({
             type: 'POST',
             data: JSON.stringify(data),
@@ -41,11 +42,14 @@ $(document).ready(function() {
 
 
 
-
+    //for uploaded images
     $("#uploaded-image").on("click", function(){
+        $("#clickit").hide();
+        $("#giffy1").show();
         var data = {}
         var img = $(this)[0].lastChild
         data.image = $(img).attr("value")
+        
 
         $.ajax({
             type: 'POST',
@@ -56,7 +60,22 @@ $(document).ready(function() {
                 console.log('success');
                 var parse = (JSON.parse(data));
                 var morgan = (parse.images[0].classifiers[0].classes);  
-                $("#watson-upload").append(JSON.stringify(morgan));   
+                //$("#watson-upload").append(JSON.stringify(morgan)); 
+                for (var i = 0; i < morgan.length; i++) {
+                    var current = morgan[i];
+                    var clas = current.class;
+                    var type;
+                    if ("type_hierarchy" in current) {
+                        type = current.type_hierarchy;
+                    }
+                    else {
+                        type = "no hierarchy";
+                    }
+                    //.show to show the watson div
+                    $("#giffy1").hide();
+                    $("#watson-upload").append("<div>" + "<b>" + clas  + "</b>" + ": " + type + "</div>"); 
+               }
+  
                 //to iterate through morgan through all the objects
                 //  get the value from the key class of the object that you are currently on and save it to a variable
                 //  check if type_hierarchy exists (you will have to look up how to check if a key in an object literal exists)
@@ -70,8 +89,8 @@ $(document).ready(function() {
     $("#upload").submit(function(event){
         event.preventDefault();
         var fd = new FormData();    
-        fd.append( 'image', $('#image')[0].files[0] );
-
+        fd.append( 'image', $('#image')[0].files[0] 
+            );
 
         $.ajax({
           url: 'http://localhost:8080/upload',
@@ -84,8 +103,10 @@ $(document).ready(function() {
            console.log(data);
            var img_str = '<img value=' + data + ' src="images/' + data + '">'
            console.log(img_str)
+           $("#watson-upload").show();
+           $("#giffy1").hide();
            $("#uploaded-image").append(img_str);
-
+           
             //data is the file name
             //img src images/file_name
             //append this image to the front page with the class of button
