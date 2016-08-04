@@ -5,6 +5,8 @@ $(document).ready(function() {
         data.image = $(this).val();
         console.log(data)
         $("#watson").show();
+
+        
         $.ajax({
             type: 'POST',
             data: JSON.stringify(data),
@@ -17,7 +19,6 @@ $(document).ready(function() {
                 console.log(morgan);
                 for (var i = 0; i < morgan.length; i++) {
                     var current = morgan[i];
-                    //{class: "something", score: "something", type_hierarchy: "something"}
                     var clas = current.class;
                     var type;
                     if ("type_hierarchy" in current) {
